@@ -5,12 +5,7 @@ import ReactAnime from 'react-animejs'
 const {Anime, stagger} = ReactAnime
 
 const App = () => {
-  const textToAnimate = 'Coming soon...'
-  // const timeline = anime.timeline({ targets: '.visualiser', delay: anime.stagger(100), translateY: 50 })
-  //   .add({ delay: anime.stagger(100), translateY: -50 })
-
-  // const visualiser = document.querySelector('visualiser')
-  // timeline.play()
+  const textToAnimate = 'Coming soon...'  
 
   return (
     <div className="App">
