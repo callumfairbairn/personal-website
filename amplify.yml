@@ -19,5 +19,3 @@ test:
     test:
       commands:
         npm test
-  artifacts:
-    baseDirectory: build
