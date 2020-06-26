@@ -16,10 +16,12 @@ frontend:
       - node_modules/**/*
 test:
   phases:
+    preTest:
+      - yarn install
+      - yarn run build
     test:
       commands:
         npm test
-
   artifacts:
     baseDirectory: build
     files:
