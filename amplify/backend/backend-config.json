@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"cognitoa47f4826": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"personalwebsite": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
