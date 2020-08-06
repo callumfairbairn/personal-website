@@ -3,7 +3,7 @@ import './Star.scss'
 import { motion, useAnimation } from 'framer-motion'
 
 const initial = {
-  rotate: [0, 180, 360], scale: [1, 2, 1],
+  rotate: [0, 180, 360], scale: [1, 3, 1],
   transition: {
     duration: 2, times: [0, 0.5, 1], loop: Infinity
   }
