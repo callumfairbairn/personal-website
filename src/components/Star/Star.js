@@ -34,6 +34,12 @@ export const Star = ({ content }) => {
         await controls.start(hoveredEnd)
         await controls.start(initial)
       }}
+
+      onTapStart={() => { controls.start(hoveredStart) }}
+      onTapCancel={async () => {
+        await controls.start(hoveredEnd)
+        await controls.start(initial)
+      }}
       className='star-with-content'
     />
     : <div className='star' />
