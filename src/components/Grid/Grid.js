@@ -4,7 +4,6 @@ import './Grid.scss'
 import { GRID_X, GRID_Y } from '../../constants'
 
 export const Grid = ({ starLocations }) => {
-  console.log(starLocations)
   return (
     <div className='grid' >
       {Array.from(Array(GRID_X), (_,x) =>
