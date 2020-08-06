@@ -1,13 +1,14 @@
 import { getStarLocations } from './getStarLocations'
 import { GRID_X, GRID_Y, STARS } from './constants'
+import React from 'react'
 
 describe('getStarLocations', () => {
   it('should return an array containing the same number of elements as STARS', () => {
-    expect(getStarLocations().length).toEqual(STARS)
+    expect(getStarLocations([]).length).toEqual(STARS)
   })
 
   it('should contain coordinates of stars', () => {
-    const starLocations = getStarLocations()
+    const starLocations = getStarLocations([])
 
     starLocations.forEach(starLocation => {
       expect(starLocation.x).toBeDefined()
@@ -16,7 +17,7 @@ describe('getStarLocations', () => {
   })
 
   it('should contain coordinates within GRID_X and GRID_Y', () => {
-    const starLocations = getStarLocations()
+    const starLocations = getStarLocations([])
 
     starLocations.forEach(starLocation => {
       expect( 0 <= starLocation.x && starLocation.x <= GRID_X).toBeTruthy()
@@ -25,9 +26,8 @@ describe('getStarLocations', () => {
   })
 
   it('should not contain repeated coordinates', () => {
-    const starLocations = getStarLocations()
+    const starLocations = getStarLocations([])
     const previousStarLocations = []
-    console.log(starLocations)
 
     starLocations.forEach(starLocation => {
       previousStarLocations.forEach(previousStarLocation => {
@@ -39,5 +39,19 @@ describe('getStarLocations', () => {
 
       previousStarLocations.push(starLocation)
     })
+  })
+
+  it('should contain an object with content', () => {
+    let contentList = [<div className='star-content' />]
+
+    const starLocations = getStarLocations(contentList)
+    let foundStarWithContent = false
+    starLocations.forEach(starLocation => {
+      if (starLocation.content !== undefined) {
+        foundStarWithContent = true
+      }
+    })
+
+    expect(foundStarWithContent).toBeTruthy()
   })
 })

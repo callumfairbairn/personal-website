@@ -1,6 +1,15 @@
-.star {
+@import 'src/colours';
+
+.star, .star-with-content {
   height: 0.5vmin;
   width: 0.5vmin;
   transform: rotate(45deg);
-  background-color: #F2E9E4;
+}
+
+.star {
+  background-color: $colour-3;
+}
+
+.star-with-content {
+  background-color: $colour-4;
 }

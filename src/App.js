@@ -6,7 +6,7 @@ import { getStarLocations } from './getStarLocations'
 
 const App = () => {
 
-  const starLocations = getStarLocations()
+  const starLocations = getStarLocations([<div className='star-content' />])
 
   return (
     <div className='App'>

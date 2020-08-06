@@ -11,8 +11,7 @@ export const Grid = ({ starLocations }) => {
         <div className='row' key={x}>
           {Array.from(Array(GRID_Y), (_,y) =>
             <div className='column' key={y}>
-              {console.log(starLocations.filter(starLocation => { return x === starLocation.x && y === starLocation.y }).length > 0, x, y)}
-              <Square key={[x, y]} starOn={starLocations.filter(starLocation => { return x === starLocation.x && y === starLocation.y }).length > 0} />
+              {getSquare(x, y, starLocations)}
             </div>
           )}
         </div>
@@ -20,3 +19,15 @@ export const Grid = ({ starLocations }) => {
     </div>
   )
 };
+
+const getSquare = (x, y, starLocations) => {
+  const intermediateArray = starLocations.filter(starLocation => { return x === starLocation.x && y === starLocation.y })
+  if (intermediateArray.length === 1) {
+    return (
+      <Square key={[x, y]} starOn={true} content={intermediateArray[0].content} />
+    )
+  }
+  return (
+    <Square key={[x, y]} starOn={false} />
+  )
+}

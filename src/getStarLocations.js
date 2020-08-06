@@ -1,13 +1,19 @@
 import { GRID_X, GRID_Y, STARS } from './constants'
 
-export const getStarLocations = () => {
+export const getStarLocations = (contentList) => {
   const previousStarLocations = []
 
-  return Array.from(Array(STARS), () => {
+  const starLocations = Array.from(Array(STARS), () => {
     const newLocation = getNewLocation(previousStarLocations)
     previousStarLocations.push(newLocation)
     return newLocation
   })
+
+  contentList.forEach(content => {
+    starLocations[Math.floor(Math.random() * starLocations.length)].content = content
+  })
+
+  return starLocations
 }
 
 const getNewLocation = (previousStarLocations) => {
