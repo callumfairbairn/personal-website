@@ -51,13 +51,10 @@ export const Star = ({ content }) => {
       }}
 
       onTap={() => { controls.start(hoveredStart) }}
-      // onTapCancel={async () => {
-      //   console.log("hi")
-      //   await controls.start(hoveredEnd)
-      //   await controls.start(initial)
-      // }}
       className='star-with-content'
       ref={ref}
-    />
+    >
+      {content}
+    </motion.div>
     : <div className='star' />
 }
