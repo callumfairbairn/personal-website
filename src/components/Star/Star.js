@@ -16,7 +16,7 @@ const hoveredStart = {
 
 const hoveredEnd = {
   rotate: [null, 0], scale: [null, 1],
-  zIndex: 0
+  zIndex: 1
 }
 
 export const Star = ({ content }) => {
